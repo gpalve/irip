@@ -28,11 +28,34 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" name="name" placeholder="{{ __('Name') }}" value="{{ old('name') }}" required autofocus>
+                                        <div class="row">
+ 
+                                        <select name="zone" class="form-control col-md-5" 
+                                         required autofocus>
+                                            <option value="">Select Zone*</option>
+                                            <option value="WR">WR</option>
+
+                                        </select>
+                                        
+                                        <div class="col-md-1">&nbsp;</div>
+                                        <select name="division" class="form-control col-md-5" 
+                                         required autofocus>
+                                            <option value="">Select Division*</option>
+                                            <option value="MMCT">MMCT</option>
+                                    
+                                        </select>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <hr>
+
+                                   <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="designation" placeholder="{{ __('Designation *') }}" value="{{ old('designation') }}" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" name="last_name" placeholder="{{ __('Last Name') }}" value="{{ old('last_name') }}" required>
+                                        <input type="text" maxlength="10" class="form-control form-control-user" name="cug" placeholder="{{ __('CUG Number *') }}" required>
                                     </div>
 
                                     <div class="form-group">
@@ -46,6 +69,8 @@
                                     <div class="form-group">
                                         <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="{{ __('Confirm Password') }}" required>
                                     </div>
+
+                                    <input type="hidden" class="form-control form-control-user" name="admin_power" value="0">
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
